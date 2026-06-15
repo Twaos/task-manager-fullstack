@@ -22,4 +22,12 @@ public class TaskService {
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
     }
+
+    public Task getTaskById(Long id) {
+        return taskRepository.findById(id).orElseThrow();
+    }
+
+    public Task updateTask(Task task) {
+        return taskRepository.save(task);
+    }
 }
